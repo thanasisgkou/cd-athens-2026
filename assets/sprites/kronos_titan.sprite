@@ -1,0 +1,82 @@
+title "Kronos The Devourer Titan"
+type sprite
+size 48x48
+fps 10
+palette bloodmoon
+outline #16070F
+light -0.5,-0.7
+
+part leg_l ramp=steel z=-4 pivot=20,32
+  capsule 20,30 17,43 r=3.8
+  box 16,44 4.2,2.0 r=1.0 ramp=gold
+
+part leg_r ramp=steel z=-2 pivot=28,32
+  capsule 28,30 31,43 r=3.8
+  box 32,44 4.2,2.0 r=1.0 ramp=gold
+
+part arm_back ramp=flesh z=-3 pivot=16,20
+  capsule 16,20 10,28 r=3.5
+  circle 9,30 r=4.0 ramp=gold
+
+part torso ramp=flesh z=0 pivot=24,26 dither=bayer2
+  box 24,23 9.5,8.5 r=3.0
+  box 24,30 7.5,4.0 r=2.0 ramp=gold
+  capsule 16,18 32,27 r=1.6 ramp=steel
+  capsule 32,18 16,27 r=1.6 ramp=steel
+
+part head ramp=flesh z=3 pivot=24,13
+  circle 24,12 r=6.2
+  box 24,16 5.5,3.2 r=1.5 ramp=obsidian
+  poly 17,9 12,3 20,7 ramp=bone
+  poly 31,9 36,3 28,7 ramp=bone
+  box 24,7 6.5,2.0 r=0.8 ramp=gold
+  pixel 21,11 w=2 h=2 step=3 ramp=crimson
+  pixel 26,11 w=2 h=2 step=3 ramp=crimson
+  box 24,15 3.5,1.5 step=2 ramp=crimson
+
+part arm_front ramp=flesh z=5 pivot=31,20
+  capsule 31,20 37,27 r=3.8
+  circle 39,28 r=4.5 ramp=crimson
+  box 37,26 2.5,2.5 r=0.5 ramp=gold
+
+tag idle frames=4 loop=pingpong
+  pose torso dy=sin(1.0) squash=sin(0.05)
+  pose head dy=sin(1.0)
+  pose arm_front dy=cos(1.5) rot=sin(6.0)
+  pose arm_back dy=sin(1.5) rot=cos(5.0)
+
+tag walk frames=4 loop=loop
+  pose leg_l rot=sin(24.0) dy=abs_sin(-2.0)
+  pose leg_r rot=sin(-24.0) dy=abs_sin(-2.0)
+  pose torso dy=abs_sin(-1.5)
+  pose head dy=abs_sin(-1.5)
+  pose arm_front rot=sin(-20.0)
+  pose arm_back rot=sin(20.0)
+
+tag climb frames=4 loop=loop
+  pose leg_l dy=sin(3.0)
+  pose leg_r dy=sin(-3.0)
+  pose arm_front dy=sin(-4.0) rot=sin(18.0)
+  pose arm_back dy=sin(4.0) rot=sin(-18.0)
+  pose torso dy=sin(1.0)
+  pose head dy=sin(1.0)
+
+tag punch frames=4 loop=once
+  pose arm_front f=0..0 dx=-3 rot=25
+  pose arm_front f=1..2 dx=0->7 rot=25->-35 scale=1.18 ease=out_quad
+  pose arm_front f=3..3 dx=2 rot=-10
+  pose torso f=1..2 dx=2 squash=-0.08
+  pose head f=1..2 dx=2
+
+tag eat frames=4 loop=once
+  pose head f=0..1 dy=-2 scale=1.15 rot=-12
+  pose head f=2..3 dy=1 squash=0.14 rot=8
+  pose arm_front f=0..2 dx=-4 dy=-6 rot=-45
+  pose arm_back f=0..2 dx=4 dy=-6 rot=45
+  pose torso f=1..2 squash=0.10
+
+tag roar frames=4 loop=pingpong
+  pose head dy=-2 rot=-15 scale=1.15
+  pose torso squash=0.12
+  pose arm_front dy=-6 rot=-55
+  pose arm_back dy=-6 rot=55

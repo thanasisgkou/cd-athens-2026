@@ -1,0 +1,10 @@
+title "Tartarus Titan Wrath Beam"
+type sfx
+
+inst roar preset=plasma_gun vol=0.35 adsr=0.005,0.22,0.45,0.25
+inst bolt preset=arcade_laser vol=0.28 duty=0.50->0.125 adsr=0.002,0.18,0.30,0.20
+inst boom preset=explosion_deep vol=0.32 adsr=0.010,0.25,0.25,0.30
+
+track plasma roar: 640Hz->110Hz:550ms
+track spark  bolt: 1400Hz->220Hz:250ms 980Hz->140Hz:300ms
+track bass   boom: 110Hz->28Hz:550ms

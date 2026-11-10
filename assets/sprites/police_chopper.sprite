@@ -1,0 +1,30 @@
+title "Athens Police Chopper"
+type sprite
+size 32x32
+fps 12
+palette cyber
+outline #090619
+light -0.5,-0.7
+
+part tail ramp=steel z=-2 pivot=16,16
+  capsule 18,16 28,14 r=2.0
+  box 28,12 1.8,3.2 r=0.5 ramp=crimson
+
+part hull ramp=steel z=0 pivot=15,17 dither=bayer2
+  circle 14,17 r=6.5
+  box 12,17 6.5,4.8 r=2.2 op=smin k=1.5
+  circle 11,16 r=4.0 ramp=plasma
+  box 14,23 5.5,1.0 ramp=obsidian
+
+part rotor ramp=gold z=4 pivot=14,10
+  box 14,9 11.0,1.0 r=0.5
+  circle 14,10 r=1.8 ramp=steel
+
+tag fly frames=4 loop=loop
+  pose rotor squash=sin(0.25)
+  pose hull dy=sin(1.5) rot=-4
+  pose tail dy=sin(1.5)
+
+tag hit frames=4 loop=once
+  pose hull rot=-15->20 squash=0.18->-0.12
+  pose tail rot=-10->15

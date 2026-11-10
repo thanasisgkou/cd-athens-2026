@@ -1,0 +1,10 @@
+title "Kronos Devour Flesh and Bone Crunch"
+type sfx
+
+inst jaws preset=hit_damage vol=0.36 adsr=0.002,0.09,0.20,0.12
+inst bone wave=fm vol=0.30 adsr=0.001,0.06,0.05,0.08 fm=2.76,5.5->0.4
+inst splat wave=noise noise_filter=0.65 vol=0.28 adsr=0.002,0.10,0.10,0.14 lpf=2800->350 q=2.4
+
+track chomp jaws: 260Hz->55Hz:140ms 310Hz->42Hz:180ms
+track snap  bone: 680Hz->180Hz:120ms R:20ms 820Hz->150Hz:160ms
+track gore  splat: 400Hz->120Hz:320ms

@@ -1,0 +1,8 @@
+title "Yiayia Slipper and DEI Shock"
+type sfx
+
+inst buzz preset=ui_error vol=0.34 vib=28,45
+inst zap preset=shield_deflect vol=0.28
+
+track shock buzz: 240Hz->95Hz:260ms
+track clang zap: 920Hz->310Hz:260ms

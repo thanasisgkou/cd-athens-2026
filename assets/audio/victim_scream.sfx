@@ -1,0 +1,8 @@
+title "Athens Victim Panic Scream"
+type sfx
+
+inst voice wave=sawtooth vol=0.28 adsr=0.008,0.18,0.45,0.14 lpf=3200->900 q=2.5 vib=14,22
+inst breath wave=noise noise_filter=0.55 vol=0.14 adsr=0.005,0.15,0.20,0.12 hpf=900
+
+track shriek voice: 780Hz->1120Hz:110ms 1120Hz->340Hz:240ms
+track gasp   breath: 900Hz->400Hz:350ms

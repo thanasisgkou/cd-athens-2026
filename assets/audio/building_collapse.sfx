@@ -1,0 +1,8 @@
+title "Athenian Polykatoikia Collapse"
+type sfx
+
+inst quake preset=explosion_deep vol=0.40 adsr=0.005,0.35,0.35,0.50
+inst rubble preset=explosion_arcade vol=0.32 adsr=0.002,0.30,0.25,0.45
+
+track sub   quake: 130Hz->22Hz:900ms
+track rocks rubble: 240Hz->45Hz:300ms 190Hz->30Hz:600ms

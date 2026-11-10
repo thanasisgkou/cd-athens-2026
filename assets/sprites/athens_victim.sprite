@@ -1,0 +1,42 @@
+title "Athens Balcony Victim"
+type sprite
+size 24x24
+fps 10
+palette genesis
+outline #0F0C1C
+light -0.5,-0.7
+
+part legs ramp=water z=-2 pivot=12,17
+  capsule 10,16 9,21 r=1.8
+  capsule 14,16 15,21 r=1.8
+
+part torso ramp=gold z=0 pivot=12,13
+  box 12,13 4.2,4.0 r=1.5
+  box 12,15 4.0,1.5 ramp=crimson
+
+part head ramp=flesh z=2 pivot=12,7
+  circle 12,7 r=3.5
+  box 12,4 3.8,1.2 ramp=obsidian
+  pixel 10,6 w=1 h=1 step=0 ramp=obsidian
+  pixel 13,6 w=1 h=1 step=0 ramp=obsidian
+  pixel 11,8 w=2 h=2 step=1 ramp=crimson
+
+part arms ramp=flesh z=3 pivot=12,11
+  capsule 8,11 5,8 r=1.5
+  capsule 16,11 19,8 r=1.5
+
+tag idle frames=4 loop=pingpong
+  pose torso dy=sin(1.0)
+  pose head dy=sin(1.0)
+  pose arms rot=sin(8.0)
+
+tag panic frames=4 loop=loop
+  pose arms dy=sin(-2.0) rot=sin(28.0)
+  pose head dy=abs_sin(-1.5)
+  pose torso squash=sin(0.12)
+  pose legs rot=sin(18.0)
+
+tag eaten frames=4 loop=once
+  pose torso f=0..3 squash=0.20->-0.25
+  pose head f=0..3 dy=0->-4 rot=0->35
+  pose arms f=0..3 rot=-35->45

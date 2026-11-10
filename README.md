@@ -1,3 +1,79 @@
+# 🏛️ ATHENS RAMPAGE: ΤΙΤΑΝΕΣ ΣΤΗΝ ΑΚΡΟΠΟΛΗ 🏛️
+### An Addictive, Gory Rampage-Style 2D Arcade Game set in Modern Athens & the Acropolis!
+
+![Athens Rampage Banner](assets/images/title_banner.png)
+
+> **"Γκρεμίστε τις Πολυκατοικίες, Φάτε τους Τουρίστες, Αποφύγετε τα Κίτρινα Ταξί και Νικήστε τον Μηχανικό Μινώταυρο της ΑΑΔΕ!"**
+
+Created for **Google Cloud Day Athens 2026** Mini Game Jam using **Go + Ebitengine (v2)**, compiling to **Native Desktop** and **WebAssembly (WASM)**.
+
+---
+
+## 🎮 Game Overview & Inside Jokes
+
+**Athens Rampage** is an explosive, gory 1986 *Rampage* arcade homage set in Athens. Control an Ancient Greek Mythological Titan climbing iconic Athenian *polykatoikies* (with orange awnings, balconies, and solar water heaters), smashing windows, devouring tourists and locals with pixel blood fountains, flying bones, and leather sandals, and fighting through 5 Athens stages up to a final boss showdown at the Parthenon!
+
+### 👹 The 3 Mythological Titans
+1. **ΚΡΟΝΟΣ (Ο Αιμοβόρος Τιτάνας)**: +40% Αίμα & Ζωή από καταβρόχθιση ανθρώπων! *Special: ΔΡΕΠΑΝΙ & ΚΕΡΑΥΝΟΣ ΤΑΡΤΑΡΟΥ*.
+2. **ΤΥΦΩΝΑΣ (Ο Δρακο-Τιτάνας της Φωτιάς)**: +35% Ταχύτητα Σκαρφαλώματος & Πύρινη Ανάσα! *Special: ΚΑΤΑΙΓΙΔΑ ΛΑΒΑΣ ΤΟΥ ΟΛΥΜΠΟΥ*.
+3. **ΠΟΛΥΦΗΜΟΣ (Ο Ανθρωποφάγος Κύκλωπας)**: +50% Ζημιά Κατεδάφισης στις πολυκατοικίες! *Special: ΣΕΙΣΜΟΣ ΤΟΥ ΕΓΚΕΛΑΔΟΥ (10 ΡΙΧΤΕΡ)*.
+
+### 🏛️ The 5 Athens Stages
+- **Πίστα 1: Μοναστηράκι & Πλάκα**: Τουρίστες με κάλτσα-σανδάλι, κράχτες ταβέρνας, Airbnb και πιτόγυρο 4,80€!
+- **Πίστα 2: Σύνταγμα & Ερμού**: Κίτρινα ταξί που αλλάζουν βάρδια, ψώνια στην Ερμού και εφοριακοί!
+- **Πίστα 3: Εξάρχεια & Ομόνοια**: Πορτοκαλί τέντες του '70, απλήρωτα κοινόχρηστα, ντελιβεράδες και γιαγιάδες με παντόφλες!
+- **Πίστα 4: Κηφισός (Ώρα Αιχμής) & Πύργος Αθηνών**: Μποτιλιάρισμα στη Λένορμαν, οδηγοί στη ΛΕΑ και managers σε Zoom!
+- **Πίστα 5: Ιερός Βράχος Ακρόπολης & Boss Fight**: Παρθενώνας, Προπύλαια και ο πανίσχυρος **Mecha-Μινώταυρος της ΑΑΔΕ (ΦΠΑ 24% Laser)**!
+
+---
+
+## 🕹️ Controls (Χειρισμός)
+
+| Action | Keyboard / Mouse |
+| :--- | :--- |
+| **Move / Walk** | **Left / Right** or **A / D** |
+| **Climb Polykatoikia** | **Up / Down** or **W / S** (attach to building wall) |
+| **Smash / Punch** | **J** / **Z** or **Left Click** |
+| **Grab & Devour Victim** | **K** / **X** or **Right Click** (restores HP with blood fountain!) |
+| **Olympus Wrath (Special)** | **SPACE** or **E** (when Rage meter is 100%) |
+| **Toggle Audio Mute** | **M** |
+| **Toggle Fullscreen** | **F11** or **Alt+Enter** |
+
+---
+
+## 🚀 How to Run & Play
+
+### Option 1: Native Desktop (Fastest Performance)
+Run directly with Go:
+```bash
+go run ./cmd/game
+```
+Or execute the pre-compiled binary:
+```bash
+./game.exe
+```
+
+### Option 2: WebAssembly in Browser
+Serve the `public/` directory with Python or Go:
+```bash
+python -m http.server 8080 --directory public
+```
+Then open: **[http://localhost:8080](http://localhost:8080)** in Chrome/Edge/Firefox.
+
+### Option 3: Sidecar Playtest in Antigravity
+Open the **Game Dev Studio** sidecar panel directly in Antigravity:
+- [Game Dev Studio](sidecar://agy-game-studio/studio/playtest)
+- [Sprite Editor](sidecar://agy-game-studio/studio/sprite)
+- [Sound Editor](sidecar://agy-game-studio/studio/sound)
+
+### Option 4: Deploy to Cloud Run
+Build and deploy the container in one command:
+```bash
+gcloud run deploy athens-rampage --source . --region europe-west1 --allow-unauthenticated
+```
+
+---
+
 # Vibe Code a 2D Game with Gemini and Antigravity 2.0
 
 ![Cloud Day Athens 2026 Logo](logo.png)

@@ -1,0 +1,8 @@
+title "Titan Building Smash"
+type sfx
+
+inst impact preset=hit_punch vol=0.38 adsr=0.002,0.14,0.10,0.16
+inst debris wave=psg_noise vol=0.26 adsr=0.001,0.12,0.05,0.15 lpf=1800->220 q=1.6
+
+track punch impact: 210Hz->38Hz:220ms
+track crunch debris: 320Hz->65Hz:220ms

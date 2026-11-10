@@ -1,0 +1,8 @@
+title "Souvlaki and Freddo Powerup"
+type sfx
+
+inst chime preset=powerup_fanfare vol=0.32
+inst sparkle preset=gem_shimmer vol=0.22
+
+track notes chime: A4:70ms C5:70ms E5:70ms A5:180ms
+track shine sparkle: R:140ms A5:250ms
